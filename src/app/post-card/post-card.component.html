@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem;"
+[ngClass]="{'bg-primary':post.type=='news','bg-danger':post.type=='politics','bg-success':post.type=='education'}"
+>
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{post.id}}</h6>
+    <p class="card-text">{{post.body}}
+    </p>
+<!-- <button (click)="attiva(post.id)" *ngIf="!post.active; else disattivaButton">Attiva</button>
+<ng-template #disattivaButton>
+  <button (click)="disattiva(post.id)">Disattiva</button>
+</ng-template> -->
+<button (click)="editPost(post.id)">{{post.active ? 'Disattiva' : 'Attiva'}}</button>
+  </div>
+</div>
